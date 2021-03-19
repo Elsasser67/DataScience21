@@ -5,20 +5,22 @@ class ListKeeper:
         self.Keeper = {"example" : [1, 2, 3, 4, 5]}
         
     def show(self):
-        nb = 0
-        for i,j in self.Keeper.items():
-            nb+=1
-            print("Name of List ", nb, " :")
-            print(i)
+        print("Lists :")
+        for i in self.Keeper:
+            print("- ", i)
 
-    def add(self,name, list):
+    def add(self, name, list):
         self.Keeper[name] = list
 
     def delete(self, name):
         del self.Keeper[name]
         
-    def sort(self,name):
-        self.Keeper
-
-    def append(self,name, list):
-        pass
+    def sort(self, name):
+        sortedList = self.Keeper[name]
+        sortedList.sort()
+        print(sortedList)
+        
+    def append(self, name, list):
+        newList = self.Keeper[name]
+        newList.extend(list)
+        print(newList)
